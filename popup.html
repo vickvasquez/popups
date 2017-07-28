@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Popup para conetar Impulsando con Jobie</title>
+</head>
+<body>
+
+<button id="login">Login con Impulsando Academy</button>
+
+<input type="button" onclick="parent.window.opener.location='http://homepage.com'; window.close();">
+<script>
+	
+	var botton = document.getElementById('login')
+
+	botton.addEventListener('click', openPopup)
+    
+    var isPopupOpen = null
+
+
+	function openPopup() {
+		var url = './login.html'
+		isPopupOpen = parent.window.open(url,"Link","width=250,height=200,left=380,top=80");
+	}
+
+
+	function resHandler(data) {
+		console.log(data)
+	}
+
+</script>
+
+</body>
+</html>

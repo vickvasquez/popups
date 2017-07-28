@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Logeate con Impulsando Academy</title>
+</head>
+<body>
+
+<form id="form-login">
+	Usuario:
+	<input type="text" name="usuario">
+	<br>
+	Contraseña:
+	<input type="password" name="password">
+
+	<input type="submit" value="Logearse">
+</form>
+
+<script>
+		
+	var frm = document.getElementById('form-login')
+	try {
+
+		frm.addEventListener('submit',e => {
+			e.preventDefault()
+
+			var data = new FormData(e.target)
+
+			console.log(data)
+
+			window.opener.resHandler(data)
+
+			window.close()
+
+		})
+	}
+	catch(err) {
+		window.close()
+	}
+
+</script>
+
+</body>
+</html>
